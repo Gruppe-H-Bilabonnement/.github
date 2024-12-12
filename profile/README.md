@@ -7,6 +7,7 @@
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![Swagger](https://img.shields.io/badge/Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 ![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 
 A comprehensive and modular solution for managing a car subscription service, comprising multiple microservices and an API Gateway for seamless integration.
 
@@ -49,7 +50,7 @@ Each component is designed to operate independently while integrating smoothly t
    - Provides centralized authentication and documentation.
 
 2. **Car Management API**:
-   - Handles CRUD operations for car inventory.
+   - Handles operations for car inventory.
 
 3. **RentalService API**:
    - Manages rental contracts and their lifecycle.
@@ -59,105 +60,17 @@ Each component is designed to operate independently while integrating smoothly t
 
 ---
 
-## 📂 Project Structure
-```
-Gruppe-H-Bilabonnement/
-│
-├── api-gateway-service/
-│   ├── app.py                   # Main application entry point
-│   ├── database/
-│   │   └── initialize.py        # Database setup
-│   ├── swagger/
-│   │   ├── config.py            # Swagger configuration
-│   │   └── docs/                # Swagger documentation specs
-│   └── .env                     # Environment variables
-│
-├── car-management-service/
-│   ├── app.py                   # Main application entry point
-│   ├── database/
-│   │   └── initialization.py    # Database setup
-│   ├── swagger/
-│   │   ├── config.py            # Swagger configuration
-│   │   └── docs/                # Swagger documentation specs
-│   └── xlsx/
-│       └── Bilabonnement_2024_Clean.xlsx
-│
-├── rental-service-api/
-│   ├── app.py                   # Main application entry point
-│   ├── database/
-│   │   ├── connection.py        # Database connection
-│   │   └── initialization.py    # Database setup
-│   ├── swagger/
-│   │   ├── config.py            # Swagger configuration
-│   │   └── docs/                # Swagger documentation specs
-│   └── xlsx/
-│       └── bilabonnement_2024_Clean.xlsx
-│
-├── damage-management-service/
-│   ├── app.py                   # Main application entry point
-│   ├── database/
-│   │   └── initialization.py    # Database setup
-│   ├── swagger/
-│   │   ├── config.py            # Swagger configuration
-│   │   └── docs/                # Swagger documentation specs
-```
-
----
-
 ## Documentation
 
+### JSON documentation
+- API Gateway: `group-h-api-gateway-h9g7egage5a7dmd8.northeurope-01.azurewebsites.net/api/v1/`
+- Car Management: `group-h-car-management-service-fhaeddg8agfddvdu.northeurope-01.azurewebsites.net/api/v1/`
+- RentalService: `group-h-rental-service-emdqb2fjdzh7ddg2.northeurope-01.azurewebsites.net/api/v1/`
+- Damage Management: `group-h-damage-management-service-ejh4byctd4hvh9dr.northeurope-01.azurewebsites.net/api/v1/`
 ### Swagger UI Endpoints
-- API Gateway: `/api/v1/docs`
-- Car Management: `/api/v1/car-management/docs`
-- RentalService: `/api/v1/rentals/docs`
-- Damage Management: `/api/v1/damage-management/docs`
+- API Gateway: `group-h-api-gateway-h9g7egage5a7dmd8.northeurope-01.azurewebsites.net/api/v1/docs`
+- Car Management: `group-h-car-management-service-fhaeddg8agfddvdu.northeurope-01.azurewebsites.net/api/v1/docs`
+- RentalService: `group-h-rental-service-emdqb2fjdzh7ddg2.northeurope-01.azurewebsites.net/api/v1/docs`
+- Damage Management: `group-h-damage-management-service-ejh4byctd4hvh9dr.northeurope-01.azurewebsites.net/api/v1/docs`
 
 ---
-
-## Setup and Deployment
-
-### Local Setup
-
-```bash
-# Set up virtual environments and dependencies for each service
-cd api-gateway-service
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-cd ../car-management-service
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-cd ../rental-service-api
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-cd ../damage-management-service
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Docker Deployment
-
-```bash
-# Build and deploy all services
-cd api-gateway-service
-docker build -t api_gateway_service .
-docker run -d -p 80:80 --name api_gateway_container api_gateway_service
-
-cd ../car-management-service
-docker build -t car_management_service .
-docker run -d -p 81:80 --name car_management_container car_management_service
-
-cd ../rental-service-api
-docker build -t rental_service .
-docker run -d -p 82:80 --name rental_service_container rental_service
-
-cd ../damage-management-service
-docker build -t damage_management_service .
-docker run -d -p 83:80 --name damage_management_container damage_management_service
-```
