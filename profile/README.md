@@ -74,3 +74,11 @@ Each component is designed to operate independently while integrating smoothly t
 - Damage Management: `group-h-damage-management-service-ejh4byctd4hvh9dr.northeurope-01.azurewebsites.net/api/v1/docs`
 
 ---
+
+## Tableau Workbook
+
+Explore our **Tableau Workbook** for visual insights into the car subscription service:
+
+📊 [Gruppe-H-Bilabonnement Workbook](https://github.com/Gruppe-H-Bilabonnement/Tableau-Workbook/tree/main)
+
+The workbook contains interactive dashboards and key metrics packaged for analysis. Download and open it in **Tableau Desktop** to explore further.
